@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Stylish Portfolio Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <%= javascript_include_tag "bootstrap" %>
+    <%= javascript_include_tag "bootstrap.min" %>
+  </head>
+
+  <body>
+
+    <!-- Side Menu -->
+    <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"></a>
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+        <li class="sidebar-brand"><a href="/">KRUG Meet Up</a></li>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#agenda">Main Agenda</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <!-- /Side Menu -->
+  
+    <!-- Full Page Image Header Area -->
+    <div id="top" class="header">
+      <!-- background image -->
+    </div>
+    <!-- /Full Page Image Header Area -->
+  
+<div id="agenda" class="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4 text-center">
+            <div class="row text-center">
+                <div class="service-item">
+                    <img src="assets/ruby.png" alt="jsicon">
+                    <p class="lead"><h2>Sessions On Ruby</h2> </p>
+                    <ul>
+                       <li><h4> Topic1 </h4></li>
+                       <li><h4> Topic1 </h4></li>
+                       <li><h4> Topic1 </h4></li>
+                     </ul>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>  
+
+
+
+
+
+    <div id="contact" class="contact">
+        <div class="container">
+      <div class="row">
+              <div class="col-md-6 col-md-offset-3 text-center">
+                <h2>Contact</h2></br></br>
+                <hr>
+          <b>Kannan Reghu</b></br>
+          +91 ph </br>
+          email </br>
+          </div>
+      </div>
+        </div>
+    </div>
+    <!-- /Contact -->
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 text-center">
+            <hr>
+            <p>Copyright &copy; ruby team @ QBurst 2013</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- /Footer -->
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/jquery.js"></script>
+    <script src="assets/bootstrap.js"></script>
+    <script src="assets/bootstrap.min.js"></script>
+    <script src="assets/modal.js"></script>
+    <script src="assets/dropdown.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+    <!-- Custom JavaScript for the Side Menu and Smooth Scrolling - Put in a custom JavaScript file to clean this up -->
+    <script>
+        $("#menu-close").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+    </script>
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+    </script>
+    <script>
+      $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+            || location.hostname == this.hostname) {
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+    </script>
+
+  </body>
+
+</html>

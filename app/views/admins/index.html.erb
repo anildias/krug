@@ -1,0 +1,49 @@
+<h3>Hello!... Ruby on Rails Developer </h3>
+<h4>Here are the list of the sessions for the Meet-Up</h4>
+
+<%= flash[:notice] %>
+<div class="col-md-4 col-md-offset-2 text-center">
+    <div class="service-item">
+        <div class="btn-group pull-right">
+          <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+            New
+          </button>
+    </div>
+    </div>
+</div>
+<div>
+<%= render "form"%>
+    
+    <p> <br> <br> <br> </p>
+
+    <% if @admins.any? %>
+      <table class="table table-striped table-bordered">
+        <tr>
+          <th>Topic Name</th>
+          <th>Speaker</th>
+          <th>Time</th>
+          <th>Actions</th>
+        </tr>
+        <tbody>
+        	<%@admins.each do |admin|%>
+          <tr>
+          <th><%= admin.topic %></th>
+          <th><%= admin.speaker %></th>
+          <th><%= admin.time %></th>
+          <td class="actions">
+     
+          <div class="btn-group">
+            <%#= link_to "Edit", admin_path(admin), method: :update ,{'data-toggle' => "modal", data-target: "#myModal"}%>
+            <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+              Edit
+            </button>
+            <%= link_to "Delete", admin_path(admin),confirm: "Are you sure you want to delete ?", method: :delete%>
+         </div>
+      </td>
+        </tr>
+        <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <h2>No Sessions</h2>
+    <% end %>

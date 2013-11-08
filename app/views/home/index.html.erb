@@ -10,25 +10,25 @@
 
     <!-- Bootstrap core CSS -->
     <link href="assets/bootstrap.css" rel="stylesheet">
-
-    <!-- Add custom CSS here -->
-    <link href="assets/stylish-portfolio.css" rel="stylesheet">
-    <link href="assets/font-awesome.min.css" rel="stylesheet">
     <link href="assets/font-awesome.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <%= javascript_include_tag "bootstrap" %>
+    <%= javascript_include_tag "bootstrap.min" %>
   </head>
 
   <body>
 
     <!-- Side Menu -->
-    <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"></a>
+    <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-reorder"></i></a>
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
         <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-        <li class="sidebar-brand"><a href="/">KRUG Meet Up</a></li>
+        <li class="sidebar-brand"><a href="/">K-RUG Meet Up</a></li>
         <li><a href="#top">Home</a></li>
-        <li><a href="#about">About KRUG</a></li>
+        <li><a href="#about">About K-RUG</a></li>
         <li><a href="#agenda">Main Agenda</a></li>
         <li><a href="#venue">Venue</a></li>
+        <li><a href="https://docs.google.com/a/qburst.com/forms/d/1lTOec82zQo5LCFiImt1hQzWWw_QV227HNJ_uuqSe4S8/viewform" target="_blank">Want to be a Presenter?</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -44,9 +44,9 @@
     <div id="about" class="intro">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-md-offset-3 text-center">
-            <h2>Kerala Ruby Users Group</h2>
-            <p class="lead">K-RUG is a ruby developers community from Kerala. Meetups are held monthly to discuss upon the emerging technology trends in ruby as well as the supporting technologies. Lightning sessions are conducted to share the experiences on challenging projects<br />
+          <div class="col-md-8 col-md-offset-1">
+            <h1 class="info">Kerala Ruby Users Group (K-RUG)</h1>
+            <p>K-RUG is a ruby developers community from Kerala. Meetups are held monthly to discuss upon the emerging technology trends in ruby as well as the supporting technologies. Lightning sessions are conducted to share the experiences on challenging projects<br />
 
 			This time we'll be gathering at QBurst Cochin office, located at Infopark, Kakkanad. We have KeralaJS (Kerala Javascript Devs Group) meetup from 9:30AM to 1:00PM, on the same day at same place. <br />
 
@@ -66,50 +66,52 @@
             <hr>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-4 col-md-offset-2 text-center">
+       <!--  <div class="row text-center">
+          <div class="col-md-4 col-md-offset-1 ">
             <div class="service-item">
               <a href="#" data-toggle="modal" data-target="#myModal"><img src="assets/js.png" alt="jsicon"></a>
               <p>Fore-noon Session on JS</p>
             </div>
           </div>
-          <div class="col-md-4 text-center">
+          <div class="col-md-4 col-md-offset-1 ">
             <div class="service-item">
-              <img src="assets/ruby.png" alt="jsicon">
-              <li class="dropdown">
-              		<a href="#" data-toggle="dropdown" class="dropdown-toggle">Messages <b class="caret"></b></a>
-              	<ul class="dropdown-menu">
-                <li><a href="#">Grape-Goliath</a></li>
-                <li><a href="#">Oauth-provider</a></li>
-                <li><a href="#">Rails 4</a></li>
-                <li class="divider"></li>
-            	</ul>
-        	</li>
+              <a href="#" data-toggle="modal" data-target="#myModal1"><img src="assets/ruby.png" alt="jsicon"></a>
+              <p>After-noon Session on Ruby</p>
             </div>
-          </div>
+          </div> 
+          
         </div>
       </div>
     </div>
-    <hr>
+    <hr> -->
     <!-- /Services -->
+     <div class="row text-center">
+          <div class="col-md-4 col-md-offset-1 ">
+            <div class="service-item">
+              <%= link_to image_tag("js.png", :class => "facebook_icon", :alt => "Facebook"), show_js_path, :target => "_blank" , :href=>"https://docs.google.com/spreadsheet/pub?key=0Ak3DVMCPwnqhdDk1ZUhoX3RacjZyQnFZS3V6VnpnQmc&output=html" %>
+              <h3> Fore-Noon JS Session </h3>
+            </div>
+          </div>
 
-	<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-		    <div class="modal-content">
-		      	<div class="modal-header">
-		        	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		        	<h4 class="modal-title" id="myModalLabel">Sessions on JS</h4>
-		      	</div>
-		      	<div class="modal-body">
-		        	
-		        	<!-- contents -->
-		      	</div>
-		    </div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+          <div class="col-md-4 col-md-offset-2 ">
+            <div class="service-item">
+              <%= link_to image_tag("ruby.png", :class => "facebook_icon", :alt => "Facebook"), show_ruby_path, :target => "_blank", :href=>"https://docs.google.com/spreadsheet/pub?key=0AhQu2vRzJVLndGEzamxYWXdvRkVYLWpoUFBUV09KMGc&output=html" %>
+                <h3> After-Noon Ruby Session </h3>
+
+               </div>
+          </div> 
+          
+        </div>
+      </div>
+        <div class="col-md-4 col-md-offset-5 ">
+          <a href="https://docs.google.com/a/qburst.com/forms/d/1lTOec82zQo5LCFiImt1hQzWWw_QV227HNJ_uuqSe4S8/viewform" class="btn btn-primary" target="_blank">Want to be a Presenter?</a>
+        </div>
+    </div>
+    <hr> 
 
 
+  
+	
 
     <!-- Map -->
    	<div id="venue" class="map">
@@ -124,17 +126,35 @@
 	</br>
     <div id="contact" class="contact">
       	<div class="container">
-			<div class="row">
-          		<div class="col-md-6 col-md-offset-3 text-center">
-            		<h2>Contact</h2></br></br>
-            		<hr>
-					<b>Kannan Reghu</b></br>
-					+91 ph </br>
-					email </br>
-		  		</div>
-			</div>
+			     <div class="row">
+              <div class="col-md-4 col-md-offset-4 text-center">
+                 <h2>Contact</h2>
+                  <hr>
+                </br>
+              </div>
+           </div>
+
+           <div class="row text-center">
+              <div class="col-md-4 col-md-offset-1 ">
+                  <div class="service-item">
+                    <b>Kannan Reghu</b></br>
+                    <b>+91 9020026069</b></br>
+                    <b>kannanr@qburst.com</b></br>
+                  </div>
+              </div>
+
+              <div class="col-md-4 col-md-offset-2 ">
+                <div class="service-item">
+                  <b>Shameer Chathangal</b></br>
+                    <b>+91 9747377001</b></br>
+                    <b>shameer@qburst.com  </b></br>
+
+                </div>
+              </div> 
+           </div>
       	</div>
     </div>
+
     <!-- /Contact -->
 
     <!-- Footer -->

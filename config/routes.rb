@@ -1,7 +1,28 @@
 KrugMeetUp::Application.routes.draw do
   root "home#index"
 
-  resources :admin 
+  resources :admins do
+    member do
+      
+    end
+
+    collection do
+    end
+  end
+
+  get "/show_js", to: "home#show_js"
+  get "/show_ruby", to: "home#show_ruby"
+
+  resources :home do
+    member do
+      # post 'show_js'
+      # post 'show_ruby'
+    end
+
+    collection do
+    end
+  end
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

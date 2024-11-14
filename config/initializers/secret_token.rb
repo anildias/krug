@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-KrugMeetUp::Application.config.secret_key_base = '27a81b30b53416289bb1e9775bbb1deb24b7b15085b62e52b5810751d6012d6f941577d7a6735c383d4b8ad1c39f447a35d5cce604f61fbfac92bca56978a198'
+KrugMeetUp::Application.config.secret_key_base =  ENV['SECRET_KEY_BASE']
